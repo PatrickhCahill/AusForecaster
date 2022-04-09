@@ -1,0 +1,21 @@
+
+svg .seat {
+    cursor: pointer;
+    transition: all 800ms;
+}
+
+.seat.lab { fill: #a62621; }
+.seat.lib { fill: #2d45a6; }
+.seat.grn { fill: #32CD32; }
+.seat.ind { fill: #909090; }
+.seat.onp { fill: #ffa500; }
+
+.senate-labor{color: #a62621;}
+.senate-coalition{color: #2d45a6;}
+.senate-grn{color: #32CD32;}
+.senate-ind{color: #909090;}
+.senate-onp{color: #ffa500;}
+.senate-seats{
+    margin-top: 0.2 em;
+    font-size: 2vh;
+  }

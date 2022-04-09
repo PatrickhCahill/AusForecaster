@@ -1,0 +1,68 @@
+.bee-party {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+.bee-labor{
+    color: #a62621;
+  }
+.bee-coalition{
+    color: #2d45a6;
+  }
+
+.bee-seats{
+    margin-top: 0.2 em;
+    font-size: 3vh;
+  }
+
+.bee-graph-wrapper{
+    max-height: 45vh;
+    cursor: crosshair;
+    margin-bottom: 4vh;
+  }
+
+.bee-graph {
+    max-width: inherit;
+    margin: 0 auto;
+  }
+
+div.bee-tooltip {
+position: absolute;
+text-align: left;
+color: white;
+white-space: normal;
+padding: 1vh;
+font-size: 2vh;
+background: rgb(96,125,139);
+border: 0.5vh solid rgb(96,125,139);
+border-radius: 0.1vh;
+pointer-events: none;
+cursor: none;
+}
+
+#bee{
+    background-size:100%;
+    margin-top: -3vh;
+    max-height: 30vh;
+  }
+
+.axis text {
+    font:25px 'Ubuntu';
+  }
+
+.bee-icon {
+    width:13px;
+    height:13px;
+    border-radius:1vw;
+}
+.bee-icon-labor{background: #a62621;}
+.bee-icon-hung{background: #858585;}
+.bee-icon-liberal{background: #2d45a6;}
+
+.col > span{
+    display: inline-block;
+  }

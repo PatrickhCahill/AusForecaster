@@ -1,0 +1,28 @@
+.frame{
+    padding: 5vh 5vh;
+    background-color: #f0f0f0;
+    border-style: solid;
+    border-color: rgba(214, 76, 76, 0.603);
+    box-shadow: 0 0 4vh rgba(0,0,0,0.15);
+    
+  }
+
+.frame-title{
+    text-align: center;
+    font-size: 2vh;
+    line-height: 2em;
+    width:100%;
+  }
+
+  .frame-subtitle{
+    text-align: center;
+    font-size: 2vh;
+    line-height: 1.2em;
+    width:100%;
+  }
+
+  @media screen and (min-width: 768px) {
+    .frame-sm {
+       max-width: 720px;
+    }
+  }

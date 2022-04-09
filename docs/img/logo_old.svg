@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="297mm"
+   height="75mm"
+   viewBox="0 0 297 75"
+   version="1.1"
+   id="svg21293"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs21290">
+    <rect
+       x="52.718567"
+       y="41.146198"
+       width="1019.6542"
+       height="286.73755"
+       id="rect43480" />
+    <rect
+       x="207.0168"
+       y="120.86695"
+       width="137.5826"
+       height="137.5826"
+       id="rect30656" />
+  </defs>
+  <g
+     id="layer1">
+    <rect
+       style="fill:#8a2b0a;fill-opacity:1;stroke-width:0.229998"
+       id="rect21376"
+       width="300.26041"
+       height="75.609917"
+       x="-1.8002985"
+       y="-0.68041241" />
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text30654"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:53.3333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';white-space:pre;shape-inside:url(#rect30656);fill:#000000;fill-opacity:1;stroke:none"><tspan
+         x="207.01758"
+         y="307.10681"
+         id="tspan59393"><tspan
+           dx="0 39.08852 41.406231 36.354141 44.661423 18.229156 36.354156 45.338501 18.229156 39.088531"
+           id="tspan59391">PATH TO PO</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.29429724,0,0,0.53395218,-16.149185,-15.398401)"
+       id="text43478"
+       style="font-style:normal;font-weight:normal;font-size:106.667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect43480);fill:#000000;fill-opacity:1;stroke:none"><tspan
+         x="52.71875"
+         y="138.46202"
+         id="tspan59397"><tspan
+           style="font-weight:bold;-inkscape-font-specification:'sans-serif Bold';fill:#ffffff"
+           id="tspan59395">PATH TO POWER</tspan></tspan></text>
+  </g>
+</svg>

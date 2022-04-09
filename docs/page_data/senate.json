@@ -1,0 +1,32 @@
+[
+    {
+        "id": "lab",
+        "legend": "Labor Party",
+        "name": "Labor Party",
+        "seats": 29
+    },
+    {
+        "id": "grn",
+        "legend": "Greens",
+        "name": "Greens",
+        "seats": 12
+    },
+    {
+        "id": "ind",
+        "legend": "Crossbench",
+        "name": "Crossbench",
+        "seats": 2
+    },
+    {
+        "id": "onp",
+        "legend": "One Nation",
+        "name": "One Nation",
+        "seats": 1
+    },
+    {
+        "id": "lib",
+        "legend": "Coalition",
+        "name": "Coalition",
+        "seats": 32
+    }
+]

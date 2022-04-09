@@ -1,0 +1,39 @@
+.bubble-centered{
+    width:100%;
+    max-width: 100vh;
+    margin: 0 auto;
+    padding: 20vh 1.5vh;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.bubble-title{
+    margin: auto;
+    max-width: 70%;
+    color:rgba(0, 0, 0, 0.8);
+    -webkit-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+    }
+.bubble-title-title{
+        margin-top: 1vh;
+        font-weight: 700;
+        font-size: 6.3vw;
+      }
+
+.bubble-title-description{
+    margin: 0;
+    font-weight: 400;
+    font-size: 3.6vw;
+  }
+
+@media screen and (min-width: 794px) {
+    .bubble-title-title {
+       font-size: 50px;
+    }
+    .bubble-title-description {
+        font-size: 30px;
+    }
+}

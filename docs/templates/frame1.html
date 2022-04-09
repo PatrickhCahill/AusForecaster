@@ -1,0 +1,11 @@
+<div class="container-fluid" style="height: 100vh;" id="bubblebackgroundparent">
+    <canvas id='bubblebackground' style="position: absolute; z-index:2"></canvas>
+    <div class="bubble-centered" style=" z-index:3">
+        <div class="bubble-title">
+            <h1 class="bubble-title-title">{{data.winner}} is <i>{{data.favouredStatus}}</i> to Win a <b><u
+                        style="color:{{data.winnerColour}}">Majority</b></u> in the Next Election.</h1>
+            <p class="bubble-title-description">Our current prediction is that {{data.winnerWith}} will win {{data.winnerSeats}} seats.</p>
+            <p class="bubble-title-description"><i>Last Updated {{data.updateTime}}.</i></p>
+        </div>
+    </div>
+</div>

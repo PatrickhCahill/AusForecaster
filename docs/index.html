@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Forecast</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="my_css/bubble.css">
+    <link rel="stylesheet" href="my_css/frame.css">
+    <link rel="stylesheet" href="my_css/beegraph.css">
+</head>
+
+<body style="background-color: lightgray;">
+
+
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark ">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"><img src="img/logo.svg" alt="" width="140" height="24"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+            aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html"
+                        style="text-decoration: underline;"> House</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="senate.html">Senate</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        About
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                        <li><a class="dropdown-item" href="modelling.html">Modelling</a></li>
+                        <li><a class="dropdown-item" href="author.html">Author</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Github</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Contribute</a>
+                </li>
+            </ul>
+            <span class="navbar-text">
+                An Australian Election Forecaster
+            </span>
+        </div>
+    </div>
+</nav>
+
+    <div class="container-fluid" style="height: 100vh;" id="bubblebackgroundparent">
+    <canvas id='bubblebackground' style="position: absolute; z-index:2"></canvas>
+    <div class="bubble-centered" style=" z-index:3">
+        <div class="bubble-title">
+            <h1 class="bubble-title-title">Labor is <i>very favoured</i> to Win a <b><u
+                        style="color:rgba(136, 31, 31, 0.82)">Majority</b></u> in the Next Election.</h1>
+            <p class="bubble-title-description">Our current prediction is that Labor will win 82 seats.</p>
+            <p class="bubble-title-description"><i>Last Updated Today.</i></p>
+        </div>
+    </div>
+</div>
+
+    <div style="padding: 2%;"></div>
+
+    <div class="container-md frame frame-sm">
+    <div class="frame-title">
+        <h1>Labor has a 91% chance of winning</h1>
+    </div>
+    <div class="frame-subtitle">Every time a new poll comes out we run 10,000 simulations to see which
+        party comes out on top. The table below gives you the breakdown of which party we think will form
+        government at the next election.</div>
+
+    <div class="row align-items-between">
+        <div class="col">
+            <h3 class="bee-party">Coalition</h3>
+        </div>
+        <div class="col ms-auto text-end">
+            <h3 class="bee-party">Labor</h3>
+
+        </div>
+    </div>
+    <div class="row align-items-between">
+        <div class="col">
+            <h2 class="bee-coalition bee-seats">3 times in 100</h2>
+        </div>
+        <div class="col ms-auto text-end">
+            <h2 class="bee-labor bee-seats">91 times in 100</h2>
+        </div>
+    </div>
+    <div class="bee-graph-wrapper">
+        <div id="bee" class="bee-graph"></div>
+    </div>
+    <div class="row align-items-between">
+        <div class="col"><span>
+                <div class="bee-icon bee-icon-liberal"></div>
+            </span>Coalition Win</div>
+        <div class="col ms-auto text-center"><span>
+                <div class="bee-icon bee-icon-hung"></div>
+            </span>Hung Parliament</div>
+        <div class="col ms-auto text-end"><span>
+                <div class="bee-icon bee-icon-labor"></div>
+            </span>Labor Win</div>
+    </div>
+
+    <div style="padding: 2%;"></div>
+
+
+    <div class="accordion accordion-flush" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                    aria-controls="panelsStayOpen-collapseOne">
+                    What does this mean?
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                aria-labelledby="panelsStayOpen-headingOne">
+                <div class="accordion-body">
+                    <strong>Labor is likely to win.</strong> But a 91% chance to win isn't guaranteed. Coalition has a better chance
+                    to win the election than one in twenty. This number is generated by a number of factors, all of which have
+                    some degree of uncertainty. The more uncertainty the harder it is to make predictions.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                    aria-controls="panelsStayOpen-collapseTwo">
+                    Where's the missing 7%?
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingTwo">
+                <div class="accordion-body">
+                    <strong>A hung parliament is possible.</strong> A hung parliament occurs when neither party has a majority.
+                    If Labor or the Coalition are left with less the 76 seats after the election, they will have to scramble to form a minority
+                    government. The last time this happened was 2010. The model gives this a 7% chance to happen.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                    aria-controls="panelsStayOpen-collapseThree">
+                    But the election isn't for a few weeks?
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingThree">
+                <div class="accordion-body">
+                    <strong>The model asks what if the election were held today</strong> It's hard enough to guage the current mood of the
+                    electorate using polls and other data. The model takes the polls as snapshots of how voters are leaning and 
+                    asks what if they voted today? The model <strong>does not try to predict the future</strong>. Anything could still happen
+                    in the next little while before the election. The polls could get narrower or further apart. This is not a crystal ball.
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+    <div style="padding: 2%;"></div>
+
+    <div class="container-md frame frame-sm">
+    <div class="frame-title">
+        <h1>How the race to form government has evolved</h1>
+    </div>
+    <div class="frame-subtitle">The race to form the next government has only just begun.
+        This graph will keep track of how the campaign goes and which parties are cutting through.</div>
+    <div style="padding: 0.5%;"></div>
+        <div class="text-center">
+            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                <input type="radio" class="btn-check" name="btnradio" value="1" id="btnradio1" autocomplete="off" checked>
+                <label class="btn btn-outline-primary" for="btnradio1">Chance to Win</label>
+    
+                <input type="radio" class="btn-check" name="btnradio" value="2" id="btnradio2" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btnradio2">Number of Seats</label>
+    
+                <input type="radio" class="btn-check" name="btnradio" value="3" id="btnradio3" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btnradio3">TPP</label>
+            </div>
+        </div>
+    <div id="probv1" class="desc"><canvas id="timechart1"></canvas></div>
+    <div id="probv2" class="desc" style="display: none;"><canvas id="timechart2"></canvas></div>
+    <div id="probv3" class="desc" style="display: none;"><canvas id="timechart3"></canvas></div>
+
+</div>
+    <div style="padding: 2%;"></div>
+
+
+        <script src="js/bootstrap.js"></script>
+
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+    <script src="my_js/bubblebackground.js"></script>
+    <script src="my_js/beeswarm.js"></script>
+    <script src="my_js/timecharttooltip.js"></script>
+    <script src="my_js/timechartmanager.js"></script>
+
+    <script src="my_js/timechart1.js"></script>
+    <script src="my_js/timechart2.js"></script>
+    <script src="my_js/timechart3.js"></script>
+
+</body>
+
+</html>
