@@ -9,7 +9,7 @@ function makeChart(untreatedData) {
   const liberal = untreatedData.map(function (d) { return d.coalition; });
   const liberalset = { label: "No. of Coalition Seats", data: liberal, backgroundColor: '#2d45a6', borderColor: '#2d45a6', };
   const hung = untreatedData.map(function (d) { return d.hung; });
-  const hungset = { label: "No. of Independent Seats", data: hung, backgroundColor: '#858585', borderColor: '#858585', };
+  const hungset = { label: "No. of Other Seats", data: hung, backgroundColor: '#858585', borderColor: '#858585', };
 
   const chartdata = { dates: labels, labor: laborset, liberal: liberalset, hung: hungset };
 
