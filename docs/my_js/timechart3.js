@@ -22,6 +22,7 @@ function makeChart(untreatedData) {
       tension:0.5,
       borderWidth:2,
       responsive: true,
+      maintainAspectRatio:false,
       interaction: {
         mode: 'index',
         intersect: false,
@@ -35,7 +36,7 @@ function makeChart(untreatedData) {
           suggestedMin: 40,
           suggestedMax: 60,
           ticks:{          
-            stepSize: 20,
+            stepSize: 10,
             font:{family:'sans-serif',size:15}}
          
         },

@@ -25,6 +25,7 @@ function makeChart(untreatedData) {
       tension:0.5,
       borderWidth:2,
       responsive: true,
+      maintainAspectRatio:false,
       interaction: {
         mode: 'index',
         intersect: false,
