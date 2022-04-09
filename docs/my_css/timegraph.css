@@ -1,2 +1,8 @@
 .desc{
   padding: 7% 0%;}
+
+@media screen and (max-width: 600px) {
+  .desc {
+    height: 60vh;
+  }
+}
