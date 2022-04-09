@@ -19,3 +19,7 @@ svg .seat {
     margin-top: 0.2 em;
     font-size: 2vh;
   }
+
+#australiasenatemap{
+    transition: all 800ms
+}

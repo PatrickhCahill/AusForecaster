@@ -22,7 +22,6 @@
 .bee-graph-wrapper{
     max-height: 45vh;
     cursor: crosshair;
-    margin-bottom: 4vh;
   }
 
 .bee-graph {
@@ -46,8 +45,6 @@ cursor: none;
 
 #bee{
     background-size:100%;
-    margin-top: -3vh;
-    max-height: 30vh;
   }
 
 .axis text {

@@ -3,11 +3,11 @@
 
 let bee__height = 400;
 let bee__width = 1000;
-let bee__margin = ({ top: 0, right: 40, bottom: 34, left: 40 });
+let bee__margin = ({ top: 0, right: 40, bottom: 40, left: 40 });
 let bee = d3.select("#bee")
     .append("svg")
     .attr("preserveAspectRatio", "xMinYMin meet")
-    .attr("viewBox", "0 0 960 500");
+    .attr("viewBox", "0 0 1000 400");
 
 
 
@@ -49,7 +49,7 @@ d3.csv("page_data/beedata.csv").then(function (data) {
         
         // xAxis is the xAxis which is created from the xScale function.
         let xAxis = d3.axisBottom(xScale)
-            .ticks(10)
+            .ticks(11)
             .tickSizeOuter(0);
 
         //We the then attach the class="x axis" to the xAxis which renders our axis.
