@@ -89,11 +89,11 @@ const getOrCreateTooltip = (chart) => {
         } else if (body.slice(0,1)=="H"){
             var outtext = "Hung Parliament: "+body.slice(body.length-2,body.length)+"%";
         } else if (body.slice(0,8)=="No. of L"){
-          var outtext = "Labor: "+body.slice(body.length-2,body.length)+"%";
+          var outtext = "Labor: "+body.slice(body.length-2,body.length);
         }else if (body.slice(0,8)=="No. of C"){
-          var outtext = "Coalition: "+body.slice(body.length-2,body.length)+"%";
+          var outtext = "Coalition: "+body.slice(body.length-2,body.length);
         }else if (body.slice(0,8)=="No. of O"){
-          var outtext = "Others: "+body.slice(body.length-2,body.length)+"%";
+          var outtext = "Others: "+body.slice(body.length-2,body.length);
         }
         else{var outtext = body}
 

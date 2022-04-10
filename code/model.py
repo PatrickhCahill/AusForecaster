@@ -270,7 +270,7 @@ def handledata(theDate,df,seats):
 
     probs = [dt.date.isoformat(theDate),round(100*labprob),round(100*libprob),round(100*hungprob)]
     probstring = ','.join([str(i) for i in probs])
-    with open(dir_path + "/docs/timechart1data.csv",'a') as f:
+    with open(dir_path + "/docs/page_data/timechart1data.csv",'a') as f:
         f.write("\n"+probstring)
 
     #SeatData
@@ -279,7 +279,7 @@ def handledata(theDate,df,seats):
     hungseats = 151-labseats-libseats
     seatslist = [dt.date.isoformat(theDate),round(labseats),round(libseats),round(hungseats)]
     seatsstring = ','.join([str(i) for i in seatslist])
-    with open(dir_path + "/docs/timechart2data.csv",'a') as f:
+    with open(dir_path + "/docs/page_data/timechart2data.csv",'a') as f:
         f.write("\n"+seatsstring)
     #TppData
     labtpps = [division.avgPred for division in seats]
@@ -288,7 +288,7 @@ def handledata(theDate,df,seats):
 
     tpplist = [dt.date.isoformat(theDate),round(labtpp*100,1),round(libtpp*100,1)]
     tppstring = ','.join([str(i) for i in tpplist])
-    with open(dir_path + "/docs/timechart3data.csv",'a') as f:
+    with open(dir_path + "/docs/page_data/timechart3data.csv",'a') as f:
         f.write("\n"+tppstring)
     #Beedata
     df.to_csv(dir_path+"/docs/beedata.csv")
@@ -402,4 +402,7 @@ def senatemodel(currentDate):
         for index, party in enumerate(state):
             prediction[index]+=party
     return prediction
-print(senatemodel(dt.date.today()))
+
+today = dt.date.today()
+theDate, df, seats = main(today,100)
+handledata(theDate, df, seats)
