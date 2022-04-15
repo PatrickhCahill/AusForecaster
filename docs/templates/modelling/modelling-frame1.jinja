@@ -1,0 +1,44 @@
+    <div class="container-md frame">
+        <div class="frame-title">
+            <h1>The Basics of the Model</h1>
+        </div>
+        <div class="container">
+            <div class="row align-items-start">
+                <div class="col border-end border-4">
+                    <h3>Australian Elections</h3>
+                        <p> To understand the model, you must understand how Australian elections work.
+                            In Australia, we have a compulsory preferential voting system. This means that
+                            almost all enrolled vote, which removes the complication of turnout, but adds the massive
+                            complexity of
+                            predicting preference flows.</p>
+
+                        <h3>All 151 Seats</h3>
+                            <p>On election day there are 151 separate elections, one for each seat in the house of
+                                representatives. This model works by first predicting national and state primary votes
+                                using
+                                polls, and then performs a regression analysis to calculate what's called
+                                Two-Party-Preferred Swings.
+                                Two-Party-Preferred are the votes after preferences of the top two candidates,
+                                usually Labor and the Coalition.</p>
+
+                            <p>Then the model simulates results in each of the 151 seats and tallies up the results.
+                                If either the Coalition or Labor reach 76 seats then they win the election. If neither
+                                of them do,
+                                then we enter hung parliament territory.</p>
+                            <h3> Rinse and repeat</h3>
+                                <p>We repeat our simulation many times to calculate the probability of
+                                    victory in the election. As we get closer to the election,
+                                    the model will get more confident.</p>
+                </div>
+
+                <div class="col col-lg-4">
+                    <h2>Open Source</h2>
+                    <p>I'm a believer in the idea of open source data. That means
+                        I don't hide my code or the data I used to make predictions.
+                        If you want to take a look, use the code for yourself and attempt to improve it,
+                        you can access it <a href="https://github.com/PatrickhCahill/AusForecaster">here.</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>

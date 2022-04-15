@@ -159,8 +159,6 @@ def getswings(currentDate,pollss,model):
     swings = {'natswing':swings[0]-0.4847,'nswswing':swings[1]-0.4822,'vicswing':swings[2]-0.5314,'qldswing':swings[3]-0.4156,'waswing':swings[4]-0.5071}
     return swings
 
-
-
 def simSeat(division,swings):
     natswing = swings['natswing']
     if division.state=="NSW":
@@ -291,7 +289,7 @@ def handledata(theDate,df,seats):
     with open(dir_path + "/docs/page_data/timechart3data.csv",'a') as f:
         f.write("\n"+tppstring)
     #Beedata
-    df.to_csv(dir_path+"/docs/beedata.csv")
+    df.to_csv(dir_path+"/docs/page_data/beedata.csv")
 
 def backrun():
     startdate = '2020-01-01'

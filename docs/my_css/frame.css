@@ -20,9 +20,3 @@
     line-height: 1.2em;
     width:100%;
   }
-
-  @media screen and (min-width: 768px) {
-    .frame-sm {
-       max-width: 720px;
-    }
-  }

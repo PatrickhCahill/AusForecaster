@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %} Path to Power {% endblock %} | An Election Forecaster</title>
+    <link rel = "icon" href = "img/drawing.svg" 
+        type = "image/x-icon">
+
+    {% for sheet in stylesheets %}
+    <link rel="stylesheet" href="{{ sheet }}">
+    {% endfor %}
+</head>
+<body style="background-color: lightgray;">
+    {% include "navbar.jinja" %}
+
+    {% block content %}Page Content Goes Here{% endblock %}
+
+    <div id="footer">
+        {% block footer %}
+        &copy; Copyright 2022 by Patrick Cahill
+        {% endblock %}
+    </div>
+</body>
+    {% for ascript in scripts %}
+    <script src="{{ ascript }}"></script>
+        {% if ascript=="https://d3js.org/d3.v4.min.js"%}
+            <script>
+            var d3v4 = window.d3;
+            window.d3 = null;
+            </script>
+        {% endif %}
+    {% endfor %}
+
+</html>

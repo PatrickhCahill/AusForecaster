@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-        <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>House Forecast</title>
+    <title> House Forecast | An Election Forecaster</title>
+    <link rel = "icon" href = "img/drawing.svg" 
+        type = "image/x-icon">
 
+    
     <link rel="stylesheet" href="css/bootstrap.css">
+    
+    <link rel="stylesheet" href="my_css/navbar.css">
+    
     <link rel="stylesheet" href="my_css/bubble.css">
+    
     <link rel="stylesheet" href="my_css/frame.css">
+    
     <link rel="stylesheet" href="my_css/beegraph.css">
+    
 </head>
-
 <body style="background-color: lightgray;">
-
-
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark ">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="index.html"><img src="img/logo.svg" alt="" width="140" height="24"></a>
+    <div class="container-fluid" style="display:inline-flex; align-items:baseline;">
+        <a class="navbar-logo" href="index.html"><img src="img/logo2.svg"alt="Path To Power" width="200vw"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
             aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -26,14 +31,14 @@
         <div class="collapse navbar-collapse" id="navbarScroll">
             <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.html"
-                        style="text-decoration: underline;"> House</a>
+                    <a class="nav-link  active activebar"aria-current="page" href="index.html">House</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="senate.html">Senate</a>
+                    <a class="nav-link "  href="senate.html">
+                        Senate</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                    <a class="nav-link dropdown-toggle " href="" id="navbarScrollingDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         About
                     </a>
@@ -43,7 +48,7 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#">Github</a></li>
+                        <li><a class="dropdown-item" href="https://github.com/PatrickhCahill/AusForecaster">Github</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -57,7 +62,8 @@
     </div>
 </nav>
 
-    <div class="container-fluid" style="height: 100vh;" id="bubblebackgroundparent">
+    
+    <div class="container-fluid" style="height: 85vh;" id="bubblebackgroundparent">
     <canvas id='bubblebackground' style="position: absolute; z-index:2"></canvas>
     <div class="bubble-centered" style=" z-index:3">
         <div class="bubble-title">
@@ -71,7 +77,7 @@
 
     <div style="padding: 2%;"></div>
 
-    <div class="container-md frame frame-sm">
+    <div class="container-sm frame">
     <div class="frame-title">
         <h1>Labor has a 91% chance of winning</h1>
     </div>
@@ -174,7 +180,7 @@
 
     <div style="padding: 2%;"></div>
 
-    <div class="container-md frame frame-sm">
+    <div class="container-sm frame">
     <div class="frame-title">
         <h1>How the race to form government has evolved</h1>
     </div>
@@ -201,24 +207,49 @@
     <div style="padding: 2%;"></div>
 
 
-        <script src="js/bootstrap.js"></script>
 
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script
-        src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-
-    <script src="my_js/bubblebackground.js"></script>
-    <script src="my_js/beeswarm.js"></script>
-    <script src="my_js/timecharttooltip.js"></script>
-    <script src="my_js/timechartmanager.js"></script>
-
-    <script src="my_js/timechart1.js"></script>
-    <script src="my_js/timechart2.js"></script>
-    <script src="my_js/timechart3.js"></script>
-
+    <div id="footer">
+        
+        &copy; Copyright 2022 by Patrick Cahill
+        
+    </div>
 </body>
+    
+    <script src="js/bootstrap.js"></script>
+        
+    
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+        
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        
+    
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+        
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        
+    
+    <script src="my_js/bubblebackground.js"></script>
+        
+    
+    <script src="my_js/beeswarm.js"></script>
+        
+    
+    <script src="my_js/timecharttooltip.js"></script>
+        
+    
+    <script src="my_js/timechartmanager.js"></script>
+        
+    
+    <script src="my_js/timechart1.js"></script>
+        
+    
+    <script src="my_js/timechart2.js"></script>
+        
+    
+    <script src="my_js/timechart3.js"></script>
+        
+    
 
 </html>

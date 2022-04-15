@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Senate</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Senate Forecast | An Election Forecaster</title>
+    <link rel = "icon" href = "img/drawing.svg" 
+        type = "image/x-icon">
 
-<link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" href="my_css/senategraph.css">
-<link rel="stylesheet" href="my_css/frame.css">
+    
+    <link rel="stylesheet" href="css/bootstrap.css">
+    
+    <link rel="stylesheet" href="my_css/navbar.css">
+    
+    <link rel="stylesheet" href="my_css/senategraph.css">
+    
+    <link rel="stylesheet" href="my_css/frame.css">
+    
 </head>
-
 <body style="background-color: lightgray;">
-
-
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark ">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="index.html"><img src="img/logo.svg" alt="" width="140" height="24"></a>
+    <div class="container-fluid" style="display:inline-flex; align-items:baseline;">
+        <a class="navbar-logo" href="index.html"><img src="img/logo2.svg"alt="Path To Power" width="200vw"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
             aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -25,15 +29,14 @@
         <div class="collapse navbar-collapse" id="navbarScroll">
             <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">House</a>
+                    <a class="nav-link "aria-current="page" href="index.html">House</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="senate.html"
-                        style="text-decoration: underline;">
+                    <a class="nav-link  active activebar"  href="senate.html">
                         Senate</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                    <a class="nav-link dropdown-toggle " href="" id="navbarScrollingDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         About
                     </a>
@@ -43,7 +46,7 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#">Github</a></li>
+                        <li><a class="dropdown-item" href="https://github.com/PatrickhCahill/AusForecaster">Github</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -56,6 +59,9 @@
         </div>
     </div>
 </nav>
+
+    
+   
     <div style="padding: 2%;"></div>
 
     <div class="container-md frame frame-sm">
@@ -143,7 +149,9 @@
         </div>
     </div>
 </div>
+
     <div style="padding: 2%;"></div>
+
     <div class="container-md frame frame-sm">
     <div class="frame-title">
         <h1> State-by-State Breakdown</h1>
@@ -154,7 +162,7 @@
             predictions
         </p>
     </div>
-    <div class="text-center" style="width: 60%;margin: auto; text-align:center;"><div id="australiasenatemap"></div></div>
+    <div class="text-center" style="width: 60%;margin: auto; text-align:center;"><div id="australiasenatemap" style="margin: auto; text-align:center"></div></div>
     <div class="accordion accordion-flush" id="accordionPanelsStayOpenExample">
         <div class="accordion-item">
             <h2 class="accordion-header" id="panelsStayOpen-headingOne">
@@ -257,16 +265,40 @@
         </div>
     </div>
 </div>
-    <div style="padding: 2%;"></div>
-    <script src="js/bootstrap.js"></script>
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<script>
-    var d3v4 = window.d3;
-    window.d3 = null;
-</script>
-<script src="js/d3-parliament.min.js" charset="utf-8"></script>
-<script src="my_js/senategraph.js"></script>
-<script src="https://d3js.org/d3.v5.min.js"></script>
-<script src="my_js/cartogram.js"></script>
 
+    <div style="padding: 2%;"></div>
+
+
+
+    <div id="footer">
+        
+        &copy; Copyright 2022 by Patrick Cahill
+        
+    </div>
 </body>
+    
+    <script src="js/bootstrap.js"></script>
+        
+    
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+        
+            <script>
+            var d3v4 = window.d3;
+            window.d3 = null;
+            </script>
+        
+    
+    <script src="js/d3-parliament.min.js"></script>
+        
+    
+    <script src="my_js/senategraph.js"></script>
+        
+    
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+        
+    
+    <script src="my_js/cartogram.js"></script>
+        
+    
+
+</html>

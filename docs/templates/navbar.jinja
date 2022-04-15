@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark ">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="index.html"><img src="img/logo.svg" alt="" width="140" height="24"></a>
+    <div class="container-fluid" style="display:inline-flex; align-items:baseline;">
+        <a class="navbar-logo" href="index.html"><img src="img/logo2.svg"alt="Path To Power" width="200vw"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
             aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -8,14 +8,14 @@
         <div class="collapse navbar-collapse" id="navbarScroll">
             <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.html"
-                        style="text-decoration: underline;"> House</a>
+                    <a class="nav-link {% if active=='index'%} active activebar{% endif %}"aria-current="page" href="index.html">House</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="senate.html">Senate</a>
+                    <a class="nav-link {% if active=='senate'%} active activebar{% endif %}"  href="senate.html">
+                        Senate</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                    <a class="nav-link dropdown-toggle {% if active=='about'%} active activebar{% endif %}" href="" id="navbarScrollingDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         About
                     </a>
@@ -25,7 +25,7 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#">Github</a></li>
+                        <li><a class="dropdown-item" href="https://github.com/PatrickhCahill/AusForecaster">Github</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">

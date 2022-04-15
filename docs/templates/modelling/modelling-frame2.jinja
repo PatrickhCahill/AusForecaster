@@ -1,0 +1,47 @@
+    <div class="container-md frame">
+        <div class="frame-title">
+            <h1>Getting into the Knitty-Gritty</h1>
+        </div>
+        <div class="container">
+            <div class="row align-items-start">
+                <div class="col col-lg-4 border-end border-4">
+                    <h3>Not all polls are created equal.</h3>
+                    <p>Many things effect the quality of a poll and how representative
+                        it is of the actual electorate. When a new poll is released data is entered
+                        into the model. The model does two things. 
+                    
+                    <p>   First it adds the primary vote and predicted TPP, if there are any 
+                        to the regression model. The regression model weights 2019 election preference flows and 2022 predicted
+                        preference flows equally, allowing us to average out the predicted preference flows, and account for some reversion to the mean.
+                        The process is theoretically more accurate than any individual pollsters prefrence calculations, and allows us to use data from polls
+                        that don't report a TPP result.
+                    </p> 
+                    <p>    
+                        The model then takes the primary data and runs it through the regression model to create
+                        a predicted TPP result. This is done for all the polls, which are then weighted by date published and sample size.
+                    </p>
+
+                </div>
+
+                <div class="col">
+                    <h3>Correlation Model</h3>
+                    <p>
+                        <strong>Each seat isn't in it's own bubble.</strong>
+                        Seats across the country correlate with one another. For example,
+                        if the Hunter swings one way, Eden-Monaro is more likely to swing in the same direction.
+                    </p>
+                    <p>
+                        The model uses this fact to create a correlation matrix. That quanitifies the effect that each seat tends to have on 
+                        the other. This means that when we simulate an election, we can simulate
+                        likely seats across the country.
+                    </p>
+                    <p>
+                        The way the model does this is by ordering all the seats randomly. Then it simulates the first seat.
+                        The result in the first seat updates all the rest of the seats. Then the second seat is simulated, and that result
+                        updates the rest. So forth and so on. This creates more accurate swings across the country,
+                        but it makes the need to do many simulations much more important.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
