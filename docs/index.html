@@ -29,7 +29,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarScroll">
-            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 200px;">
                 <li class="nav-item">
                     <a class="nav-link  active activebar"aria-current="page" href="index.html">House</a>
                 </li>
@@ -63,7 +63,7 @@
 </nav>
 
     
-    <div class="container-fluid" style="height: 85vh;" id="bubblebackgroundparent">
+    <div class="container-fluid" style="height: 70vh;" id="bubblebackgroundparent">
     <canvas id='bubblebackground' style="position: absolute; z-index:2"></canvas>
     <div class="bubble-centered" style=" z-index:3">
         <div class="bubble-title">
@@ -74,52 +74,30 @@
         </div>
     </div>
 </div>
-
     <div style="padding: 2%;"></div>
 
-    <div class="container-sm frame">
+    <div class="container-sm frame small">
     <div class="frame-title">
-        <h1>Labor has a 91% chance of winning</h1>
+        <h1>How the race to form government has evolved</h1>
     </div>
-    <div class="frame-subtitle">Every time a new poll comes out we run 10,000 simulations to see which
-        party comes out on top. The table below gives you the breakdown of which party we think will form
-        government at the next election.</div>
-
-    <div class="row align-items-between">
-        <div class="col">
-            <h3 class="bee-party">Coalition</h3>
+    <div class="frame-subtitle">The race to form the next government has only just begun.
+        This graph will keep track of how the campaign goes and which parties are cutting through.</div>
+    <div style="padding: 0.5%;"></div>
+        <div class="text-center">
+            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                <input type="radio" class="btn-check" name="btnradio" value="1" id="btnradio1" autocomplete="off" checked>
+                <label class="btn btn-outline-primary" for="btnradio1">Chance to Win</label>
+    
+                <input type="radio" class="btn-check" name="btnradio" value="2" id="btnradio2" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btnradio2">Number of Seats</label>
+    
+                <input type="radio" class="btn-check" name="btnradio" value="3" id="btnradio3" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btnradio3">TPP</label>
+            </div>
         </div>
-        <div class="col ms-auto text-end">
-            <h3 class="bee-party">Labor</h3>
-
-        </div>
-    </div>
-    <div class="row align-items-between">
-        <div class="col">
-            <h2 class="bee-coalition bee-seats">3 times in 100</h2>
-        </div>
-        <div class="col ms-auto text-end">
-            <h2 class="bee-labor bee-seats">91 times in 100</h2>
-        </div>
-    </div>
-    <div class="bee-graph-wrapper">
-        <div id="bee" class="bee-graph"></div>
-    </div>
-    <div class="row align-items-between">
-        <div class="col"><span>
-                <div class="bee-icon bee-icon-liberal"></div>
-            </span>Coalition Win</div>
-        <div class="col ms-auto text-center"><span>
-                <div class="bee-icon bee-icon-hung"></div>
-            </span>Hung Parliament</div>
-        <div class="col ms-auto text-end"><span>
-                <div class="bee-icon bee-icon-labor"></div>
-            </span>Labor Win</div>
-    </div>
-
-    <div style="padding: 2%;"></div>
-
-
+    <div id="probv1" class="desc" style="position: relative;height: 30vh;"><canvas id="timechart1"></canvas></div>
+    <div id="probv2" class="desc" style="display: none;position: relative;height: 30vh;"><canvas id="timechart2"></canvas></div>
+    <div id="probv3" class="desc" style="display: none;position: relative;height: 30vh;"><canvas id="timechart3"></canvas></div>
     <div class="accordion accordion-flush" id="accordionPanelsStayOpenExample">
         <div class="accordion-item">
             <h2 class="accordion-header" id="panelsStayOpen-headingOne">
@@ -174,34 +152,87 @@
             </div>
         </div>
     </div>
+</div>
+    <div style="padding: 2%;"></div>
+
+    <div class="container-sm frame small">
+    <div class="frame-title">
+        <h1>Labor has a 91% chance of winning</h1>
+    </div>
+    <div class="frame-subtitle">Every time a new poll comes out we run 10,000 simulations to see which
+        party comes out on top. The table below gives you the breakdown of which party we think will form
+        government at the next election.</div>
+
+    <div class="row align-items-between">
+        <div class="col">
+            <h3 class="bee-party">Coalition</h3>
+        </div>
+        <div class="col ms-auto text-end">
+            <h3 class="bee-party">Labor</h3>
+
+        </div>
+    </div>
+    <div class="row align-items-between">
+        <div class="col">
+            <h2 class="bee-coalition bee-seats">3 times in 100</h2>
+        </div>
+        <div class="col ms-auto text-end">
+            <h2 class="bee-labor bee-seats">91 times in 100</h2>
+        </div>
+    </div>
+    <div class="bee-graph-wrapper">
+        <div id="bee" class="bee-graph"></div>
+    </div>
+    <div class="row align-items-between">
+        <div class="col"><span>
+                <div class="bee-icon bee-icon-liberal"></div>
+            </span>Coalition Win</div>
+        <div class="col ms-auto text-center"><span>
+                <div class="bee-icon bee-icon-hung"></div>
+            </span>Hung Parliament</div>
+        <div class="col ms-auto text-end"><span>
+                <div class="bee-icon bee-icon-labor"></div>
+            </span>Labor Win</div>
+    </div>
+
+    <div style="padding: 2%;"></div>
+
+
+
 
 
 </div>
+    <div style="padding: 2%;"></div>
+    
+    <div class="container-sm frame">
+    <div class="frame-title">
+        <h1>Another way to think of the results</h1>
+    </div>
+    <div class="frame-subtitle">The beechart above is handy for understanding the possible results, but the histogram provides a more accurate view on
+    election outcomes.</div>
 
+</div>
     <div style="padding: 2%;"></div>
 
     <div class="container-sm frame">
     <div class="frame-title">
-        <h1>How the race to form government has evolved</h1>
+        <h1>Our prediction of the primaryvotes overtime</h1>
     </div>
-    <div class="frame-subtitle">The race to form the next government has only just begun.
-        This graph will keep track of how the campaign goes and which parties are cutting through.</div>
-    <div style="padding: 0.5%;"></div>
-        <div class="text-center">
-            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                <input type="radio" class="btn-check" name="btnradio" value="1" id="btnradio1" autocomplete="off" checked>
-                <label class="btn btn-outline-primary" for="btnradio1">Chance to Win</label>
-    
-                <input type="radio" class="btn-check" name="btnradio" value="2" id="btnradio2" autocomplete="off">
-                <label class="btn btn-outline-primary" for="btnradio2">Number of Seats</label>
-    
-                <input type="radio" class="btn-check" name="btnradio" value="3" id="btnradio3" autocomplete="off">
-                <label class="btn btn-outline-primary" for="btnradio3">TPP</label>
-            </div>
-        </div>
-    <div id="probv1" class="desc" style="position: relative;height: 30vh;"><canvas id="timechart1"></canvas></div>
-    <div id="probv2" class="desc" style="display: none;position: relative;height: 30vh;"><canvas id="timechart2"></canvas></div>
-    <div id="probv3" class="desc" style="display: none;position: relative;height: 30vh;"><canvas id="timechart3"></canvas></div>
+    <div class="frame-subtitle">Polls can be biased, have different sample sizes and do not take into account any <em>fundamentals</em>.
+    Our model adjusts the polls and their uncertainties using a Kalman filter. This is how we think the primary votes will pan out.</div>
+
+</div>
+    <div style="padding: 2%;"></div>
+
+    <div class="container-sm frame">
+    <div class="frame-title">
+        <h1>Preference Flows</h1>
+    </div>
+    <div class="frame-subtitle"> Our model calculates preference flows in two ways. First it applies a weighted regression analysis
+    of the 2019 election and recent models to construct a prior on how preferences will flow. Then when we simulate elections,
+    our correlation matrix updates the two party preferred outcomes, therefore, changing the preference flows. This graphs shows
+    how we think preferences will flow to Labor and the Liberals.
+    </div>
 
 </div>
     <div style="padding: 2%;"></div>

@@ -2,15 +2,22 @@
 {% block title %}House Forecast{% endblock %}
 
 {% block content %}
-    {% include 'index/index-frame1.jinja'%}
-
+    {% include 'index/bubble.jinja'%}
     <div style="padding: 2%;"></div>
 
-    {% include 'index/index-frame2.jinja'%}
-
+    {% include 'index/timegraphs.jinja'%}
     <div style="padding: 2%;"></div>
 
-    {% include 'index/index-frame3.jinja'%}
+    {% include 'index/beechart.jinja'%}
+    <div style="padding: 2%;"></div>
+    
+    {% include 'index/histogram.jinja'%}
+    <div style="padding: 2%;"></div>
+
+    {% include 'index/primaryvotes.jinja'%}
+    <div style="padding: 2%;"></div>
+
+    {% include 'index/preferenceflow.jinja'%}
     <div style="padding: 2%;"></div>
 
 {% endblock content %}

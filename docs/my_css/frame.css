@@ -4,7 +4,6 @@
     border-style: solid;
     border-color: rgba(214, 76, 76, 0.603);
     box-shadow: 0 0 4vh rgba(0,0,0,0.15);
-    
   }
 
 .frame-title{
@@ -20,3 +19,6 @@
     line-height: 1.2em;
     width:100%;
   }
+.small{
+  max-width: 1000px;
+}

@@ -1,9 +1,8 @@
 .bubble-centered{
-    width:50%;
     max-width: 100vh;
     min-width: 300px;
     margin: 0 auto;
-    padding: 25vh 1.5vh;
+    padding-top: 15%;
     box-sizing: border-box;
     display: flex;
     align-items: center;
@@ -21,20 +20,11 @@
 .bubble-title-title{
         margin-top: 1vh;
         font-weight: 700;
-        font-size: 6.3vw;
+        font-size: 200%;
       }
 
 .bubble-title-description{
     margin: 0;
     font-weight: 400;
-    font-size: 3.6vw;
+    font-size: 150%;
   }
-
-@media screen and (min-width: 794px) {
-    .bubble-title-title {
-       font-size: 80px;
-    }
-    .bubble-title-description {
-        font-size: 30px;
-    }
-}
