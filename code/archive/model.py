@@ -1,14 +1,14 @@
-from asyncio import run
+from math import sqrt
 import os
 import datetime as dt
-from re import S
-from unittest.mock import NonCallableMagicMock
 import pandas as pd
-from sklearn import datasets, linear_model
+from sklearn import linear_model
 from random import shuffle
 from numpy.random import normal
 from numpy import std
 from math import floor
+import kalmanpolls as k
+
 # Define a poll class
 class poll:
     def __init__(self,theDate,labor,liberal,greens,onp,ind):
@@ -79,15 +79,20 @@ def tppregression():
     return model
 
 # Takes a poll and a model and calculates predicted tpp results
-def labtpp(poll,model):
+def labtpp(apoll,model):
     labor = model.intercept_[0]
-    labor += model.coef_[0][0]*poll.liberal
-    labor += model.coef_[0][1]*poll.labor
-    labor += model.coef_[0][2]*poll.greens
-    labor += model.coef_[0][3]*poll.onp
-    labor += model.coef_[0][4]*poll.ind
+    labor += model.coef_[0][0]*apoll.liberal
+    labor += model.coef_[0][1]*apoll.labor
+    labor += model.coef_[0][2]*apoll.greens
+    labor += model.coef_[0][3]*apoll.onp
+    labor += model.coef_[0][4]*apoll.ind
     return labor
 
+def labtppkalman(primary,model):
+    labor = model.intercept_[0]
+    for index,party in enumerate(primary):
+        labor += model.coef_[0][index]*party
+    return labor
 # Finds the average for a list of polls of labtpp(poll,model)
 def predlab(currentDate,polls,model):
     polllist = []
@@ -106,6 +111,7 @@ def predlab(currentDate,polls,model):
     for index, value in enumerate(labtpps):
         output += weights[index]*value
     return output
+
 
 # Define a seat class
 class seat:
@@ -158,6 +164,31 @@ def getswings(currentDate,pollss,model):
     swings = [predlab(currentDate,polls,model) for polls in pollss]
     swings = {'natswing':swings[0]-0.4847,'nswswing':swings[1]-0.4822,'vicswing':swings[2]-0.5314,'qldswing':swings[3]-0.4156,'waswing':swings[4]-0.5071}
     return swings
+
+def getswingskalmanfilter(currentDate,model):
+    files = ["polling_data/2022natpolls.csv","polling_data/2022nswpolls.csv","polling_data/2022vicpolls.csv","polling_data/2022qldpolls.csv","polling_data/2022wapolls.csv"]
+    primaries = [k.getavgonday(file,currentDate,k.config)[1] for file in files]
+    vars = [k.getavgonday(file,currentDate,k.config)[2] for file in files]
+    stds = []
+    for index,file in enumerate(files):
+        stds.append([sqrt(abs(var)) for var in vars[index]])
+    
+    
+    errors = [abs(labtppkalman(uncertainty,model)) for uncertainty in stds]
+    swings = [labtppkalman(primary,model) for primary in primaries]
+
+
+
+    return swings, errors
+
+def randifyswings(swings,errors,randify):
+    if not randify:
+        newswings = {'natswing':swings[0]-0.4847,'nswswing':swings[1]-0.4822,'vicswing':swings[2]-0.5314,'qldswing':swings[3]-0.4156,'waswing':swings[4]-0.5071}
+        return newswings
+    else:
+        newswings = [normal(swing,errors[index]) for index,swing in enumerate(swings)]
+        newswings = {'natswing':newswings[0]-0.4847,'nswswing':newswings[1]-0.4822,'vicswing':newswings[2]-0.5314,'qldswing':newswings[3]-0.4156,'waswing':newswings[4]-0.5071}
+        return newswings
 
 def simSeat(division,swings):
     natswing = swings['natswing']
@@ -215,9 +246,9 @@ def simfacts(seats):
     nLib = 0
     nThird = 0
     for division in seats:
-        if division.predResult>=0.5 and division.tppcontest=='Yes':
+        if division.avgPred>=0.5 and division.tppcontest=='Yes':
             nLabor +=1
-        elif division.predResult<0.5 and division.tppcontest=='Yes':
+        elif division.avgPred<0.5 and division.tppcontest=='Yes':
             nLib +=1
         elif division.tppcontest=='No':
             nThird +=1
@@ -232,17 +263,19 @@ def simfacts(seats):
 
 def main(theDate,num):
     model = tppregression()
-    pollss = csvtopollss()
+    # pollss = csvtopollss()
     seats = csvtoseats()
     rmatrix = cormatrix(seats)
-    swings = getswings(theDate,pollss,model)
+    # swings = getswings(theDate,pollss,model)
+    swings, errors = getswingskalmanfilter(theDate,model)
     nLabor = []
     nLib = []
     nThird = []
     winner = []
     for iter in range(0,num):
+        newswings = randifyswings(swings,errors,True)
         print(iter)
-        simElection(swings,seats,rmatrix)
+        simElection(newswings,seats,rmatrix)
         facts = simfacts(seats)
 
         nLabor.append(facts['nLabor'])
@@ -402,5 +435,9 @@ def senatemodel(currentDate):
     return prediction
 
 today = dt.date.today()
-theDate, df, seats = main(today,100)
+theDate, df, seats = main(today,2000)
+
 handledata(theDate, df, seats)
+
+# output= k.getavgonday("polling_data/2022wapolls.csv",dt.date.today(),k.config)
+# print(output[1])

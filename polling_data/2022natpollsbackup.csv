@@ -1,0 +1,152 @@
+Start Date,End Date,Pollster,Mode,Scope,Sample,LNC,ALP,GRN,PHON,UND
+2019-07-25,2019-07-28,Newspoll,Online/IVR,NAT,1601,44,33,11,3,0
+2019-08-15,2019-08-18,Newspoll,Online/IVR,NAT,1623,42,34,11,4,0
+2019-09-05,2019-09-07,Newspoll,Online/IVR,NAT,1661,43,35,12,5,0
+2019-09-26,2019-09-28,Newspoll,Online/IVR,NAT,1658,42,33,13,6,0
+2019-10-17,2019-10-19,Newspoll,Online/IVR,NAT,1634,42,33,13,6,0
+2019-11-07,2019-11-10,Newspoll,Online/IVR,NAT,1682,40,35,12,7,0
+2019-11-20,2019-11-23,Newspoll,Online,NAT,1519,41,33,12,5,0
+2019-12-04,2019-12-08,Newspoll,Online,NAT,1503,42,33,11,5,0
+2020-01-07,2020-01-11,Essential Research,Online,NAT,1081,36,35,10,5,6
+2020-01-08,2020-01-11,Newspoll,Online,NAT,1505,40,36,12,4,0
+2020-01-21,2020-01-25,Essential Research,Online,NAT,1080,37,35,9,6,7
+2020-01-29,2020-02-01,Newspoll,Online,NAT,1510,38,35,13,4,0
+2020-02-04,2020-02-08,Essential Research,Online,NAT,1056,34,36,10,6,7
+2020-02-18,2020-02-22,Essential Research,Online,NAT,1090,38,36,10,4,7
+2020-02-19,2020-02-22,Newspoll,Online,NAT,1513,38,34,13,4,0
+2020-03-05,2020-03-08,Essential Research,Online,NAT,1096,38,35,8,5,7
+2020-03-11,2020-03-14,Newspoll,Online,NAT,1501,40,36,12,4,0
+2020-03-18,2020-03-21,Essential Research,Online,NAT,1034,37,34,10,3,8
+2020-03-25,2020-03-28,Essential Research,Online,NAT,1086,38,34,10,4,8
+2020-04-01,2020-04-04,Newspoll,Online,NAT,1508,42,34,13,5,0
+2020-04-02,2020-04-05,Essential Research,Online,NAT,1069,36,35,10,3,8
+2020-03-18,2020-05-23,Essential Research,Online,NAT,1068,38,35,10,5,7
+2020-04-18,2020-04-26,Roy Morgan,Online/Phone,NAT,2806,43.5,33,11.5,3,0
+2020-04-22,2020-04-25,Newspoll,Online,NAT,1519,41,36,12,4,0
+2020-03-25,2020-05-30,Essential Research,Online,NAT,1068,40,32,10,5,7
+2020-04-25,2020-05-03,Essential Research,Online,NAT,1054,40,34,10,4,7
+2020-04-30,2020-05-03,Essential Research,Online,NAT,1093,38,34,10,4,8
+2020-05-07,2020-05-10,Essential Research,Online,NAT,1067,41,31,9,3,8
+2020-05-13,2020-05-16,Newspoll,Online,NAT,1504,43,35,10,3,0
+2020-05-13,2020-05-16,Essential Research,Online,NAT,1073,38,35,8,3,9
+2020-05-20,2020-05-23,Essential Research,Online,NAT,1087,39,33,11,5,7
+2020-05-28,2020-05-31,Essential Research,Online,NAT,1059,39,32,10,5,7
+2020-06-03,2020-06-06,Newspoll,Online,NAT,1512,42,34,12,4,0
+2020-06-03,2020-06-07,Essential Research,Online,NAT,1073,40,33,9,4,8
+2020-06-10,2020-06-14,Essential Research,Online,NAT,1087,38,35,9,5,7
+2020-06-13,2020-06-21,Roy Morgan,Online/Phone,NAT,2593,42.5,34.5,10.5,4,0
+2020-06-17,2020-06-21,Essential Research,Online,NAT,1079,39,33,10,5,7
+2020-06-24,2020-06-27,Newspoll,Online,NAT,1521,42,35,11,3,0
+2020-06-24,2020-06-28,Essential Research,Online,NAT,1058,39,33,9,4,8
+2020-07-08,2020-07-12,Essential Research,Online,NAT,1054,37,34,10,4,9
+2020-07-11,2020-07-19,Roy Morgan,Online/Phone,NAT,2589,43.5,33.5,11,2.5,0
+2020-07-15,2020-07-18,Newspoll,Online,NAT,1850,44,34,10,4,0
+2020-07-23,2020-07-26,Essential Research,Online,NAT,1058,38,35,9,4,8
+2020-08-05,2020-08-08,Newspoll,Online,NAT,1509,43,33,11,4,0
+2020-08-06,2020-08-09,Essential Research,Online,NAT,1010,38,34,9,4,10
+2020-08-08,2020-08-16,Roy Morgan,Online/Phone,NAT,2841,46,32.5,11,3,0
+2020-08-20,2020-08-23,Essential Research,Online,NAT,1050,39,35,9,4,7
+2020-08-26,2020-08-29,Newspoll,Online,NAT,1507,41,36,11,3,0
+2020-09-03,2020-09-06,Essential Research,Online,NAT,1076,38,32,10,3,8
+2020-09-16,2020-09-19,Newspoll,Online,NAT,2068,43,34,12,3,0
+2020-09-17,2020-09-21,Essential Research,Online,NAT,1050,41,31,10,4,9
+2020-10-01,2020-10-05,Essential Research,Online,NAT,1050,39,34,9,5,7
+2020-10-07,2020-10-10,Newspoll,Online,NAT,1527,44,34,11,3,0
+2020-10-08,2020-10-12,Essential Research,Online,NAT,1050,40,33,9,3,8
+2020-10-15,2020-10-19,Essential Research,Online,NAT,1082,39,35,9,3,8
+2020-10-29,2020-11-02,Essential Research,Online,NAT,1063,39,35,9,3,9
+2020-11-04,2020-11-07,Newspoll,Online,NAT,1510,43,34,11,3,0
+2020-11-11,2020-11-16,Essential Research,Online,NAT,1010,38,35,9,4,7
+2020-11-14,2020-11-22,Roy Morgan,Online/Phone,NAT,2824,42,34,12,4,0
+2020-11-25,2020-11-28,Newspoll,Online,NAT,1511,43,36,11,2,0
+2020-11-25,2020-11-30,Essential Research,Online,NAT,1034,41,33,8,4,8
+2020-12-09,2020-12-14,Essential Research,Online,NAT,1071,37,35,8,4,9
+2021-01-13,2021-01-18,Essential Research,Online,NAT,1084,40,33,10,3,7
+2021-01-27,2021-01-30,Newspoll,Online,NAT,1512,42,36,10,3,0
+2021-01-27,2021-02-01,Essential Research,Online,NAT,1092,37,35,10,3,8
+2021-02-06,2021-02-14,Roy Morgan,Online/Phone,NAT,2786,40,34.5,13,3.5,0
+2021-02-10,2021-02-15,Essential Research,Online,NAT,1109,39,35,8,4,6
+2021-02-17,2021-02-20,Newspoll,Online,NAT,1504,42,37,10,3,0
+2021-02-24,2021-03-01,Essential Research,Online,NAT,1074,37,34,9,4,7
+2021-03-06,2021-03-14,Roy Morgan,Online/Phone,NAT,2747,41,34.5,12.5,2.5,0
+2021-03-10,2021-03-13,Newspoll,Online,NAT,1521,39,39,10,3,0
+2021-03-10,2021-03-15,Essential Research,Online,NAT,1124,38,34,9,3,7
+2021-03-24,2021-03-27,Newspoll,Online,NAT,1517,40,38,11,2,0
+2021-03-24,2021-03-28,Essential Research,Online,NAT,1100,39,36,8,3,7
+2021-04-07,2021-04-12,Essential Research,Online,NAT,1368,37,36,10,3,7
+2021-04-12,2021-04-16,Resolve Strategic,Online/Phone,NAT,2000,38,33,12,6,0
+2021-04-21,2021-04-24,Newspoll,Online,NAT,1514,41,38,10,3,0
+2021-04-21,2021-04-26,Essential Research,Online,NAT,1090,39,34,10,4,7
+2021-05-05,2021-05-10,Essential Research,Online,NAT,1092,38,36,9,3,8
+2021-05-12,2021-05-15,Newspoll,Online,NAT,1506,41,36,12,2,0
+2021-05-12,2021-05-16,Resolve Strategic,Online,NAT,1622,39,35,12,2,0
+2021-05-19,2021-05-24,Essential Research,Online,NAT,1100,37,35,10,3,8
+2021-05-29,2021-06-06,Roy Morgan,Online/Phone,NAT,2817,40,35.5,11.5,3,0
+2021-06-02,2021-06-05,Newspoll,Online,NAT,1516,41,36,11,3,0
+2021-06-02,2021-06-06,Essential Research,Online,NAT,1104,38,35,10,4,7
+2021-06-08,2021-06-12,Resolve Strategic,Online,NAT,1600,40,36,10,3,0
+2021-06-12,2021-06-20,Roy Morgan,Online/Phone,NAT,2782,41.5,34.5,12,3.5,0
+2021-06-16,2021-06-20,Essential Research,Online,NAT,1087,38,36,10,4,7
+2021-06-23,2021-06-27,Newspoll,Online,NAT,1513,41,37,11,3,0
+2021-06-30,2021-07-04,Essential Research,Online,NAT,1099,37,36,8,4,8
+2021-07-10,2021-07-18,Roy Morgan,Online/Phone,NAT,2737,39,37,11.5,3,0
+2021-07-13,2021-07-17,Resolve Strategic,Online,NAT,1607,38,35,12,4,0
+2021-07-14,2021-07-17,Newspoll,Online,NAT,1506,39,39,10,3,0
+2021-07-14,2021-07-18,Essential Research,Online,NAT,1100,37,36,10,4,8
+2021-07-24,2021-08-01,Roy Morgan,Online/Phone,NAT,2709,37,37,12.5,3,0
+2021-07-28,2021-08-01,Essential Research,Online,NAT,1057,38,35,9,4,8
+2021-08-04,2021-08-07,Newspoll,Online,NAT,1527,39,39,11,3,0
+2021-08-07,2021-08-15,Roy Morgan,Online/Phone,NAT,2747,37.5,37.5,12.5,3.5,0
+2021-08-11,2021-08-15,Essential Research,Online,NAT,1100,37,36,9,3,8
+2021-08-17,2021-08-21,Resolve Strategic,Online,NAT,1607,40,32,12,2,0
+2021-08-21,2021-08-29,Roy Morgan,Online/Phone,NAT,2735,37.5,38.5,11.5,3,0
+2021-08-25,2021-08-28,Newspoll,Online,NAT,1528,36,40,10,3,0
+2021-08-25,2021-08-29,Essential Research,Online,NAT,1100,38,36,10,4,7
+2021-09-04,2021-09-12,Roy Morgan,Online/Phone,NAT,2753,38.5,35,13,3,0
+2021-09-08,2021-09-12,Essential Research,Online,NAT,1100,38,34,8,4,8
+2021-09-15,2021-09-18,Newspoll,Online,NAT,2144,37,38,10,3,0
+2021-09-15,2021-09-19,Resolve Strategic,Online,NAT,1606,39,31,10,4,0
+2021-09-18,2021-09-26,Roy Morgan,Online/Phone,NAT,2752,36,36,12.5,3.5,0
+2021-09-22,2021-09-26,Essential Research,Online,NAT,1094,38,36,9,3,6
+2021-09-29,2021-10-02,Newspoll,Online,NAT,1545,37,37,11,2,0
+2021-10-02,2021-10-09,Roy Morgan,Online/Phone,NAT,2794,37.5,36,11.5,3,0
+2021-10-06,2021-10-10,Essential Research,Online,NAT,1097,36,34,9,4,9
+2021-10-16,2021-10-24,Roy Morgan,Online/Phone,NAT,2778,36.5,35,13.5,3.5,0
+2021-10-20,2021-10-23,Newspoll,Online,NAT,1515,35,38,11,3,0
+2021-10-20,2021-10-24,Resolve Strategic,Online,NAT,1781,37,34,11,3,0
+2021-10-20,2021-10-24,Essential Research,Online,NAT,1781,37,36,10,3,6
+2021-10-30,2021-11-07,Roy Morgan,Online/Phone,NAT,2723,36.5,35,11.5,3,0
+2021-11-03,2021-11-07,Essential Research,Online,NAT,1089,37,35,9,3,10
+2021-11-10,2021-11-13,Newspoll,Online,NAT,1524,37,38,11,2,0
+2021-11-13,2021-11-21,Roy Morgan,Online/Phone,NAT,2795,35.5,35.5,12,3.5,0
+2021-11-17,2021-11-21,Resolve Strategic,Online,NAT,1781,39,32,11,3,0
+2021-11-17,2021-11-21,Essential Research,Online,NAT,1095,37,36,10,4,7
+2021-11-27,2021-12-05,Roy Morgan,Online/Phone,NAT,2805,34.5,36,12.5,3.5,0
+2021-12-01,2021-12-04,Newspoll,Online,NAT,1518,36,38,10,3,0
+2021-12-01,2021-12-06,Essential Research,Voting,NAT,1094,38,35,10,3,8
+2021-12-08,2021-12-13,Essential Research,Voting,NAT,1095,36,36,9,4,8
+2022-01-04,2022-01-16,Roy Morgan,Online/Phone,NAT,2791,34.5,37,12,3,0
+2022-01-11,2022-01-15,Resolve Strategic,Online,NAT,1607,34,35,11,3,0
+2022-01-20,2022-01-23,Essential Research,Online,NAT,1001,36,37,8,3,8
+2022-01-17,2022-01-30,Roy Morgan,Online/Phone,NAT,2783,33,37.5,11.5,3.5,0
+2022-01-25,2022-01-28,Newspoll,Online,NAT,1526,34,41,11,3,0
+2022-02-03,2022-02-06,Essential Research,Online,NAT,1069,37,35,9,4,8
+2022-01-31,2022-02-13,Roy Morgan,Online/Phone,NAT,2796,33,38.5,11.5,4,0
+2022-02-09,2022-02-12,Newspoll,Online,NAT,1526,34,41,8,3,0
+2022-02-15,2022-02-20,Resolve Strategic,Online,NAT,1604,33,35,10,3,0
+2022-02-17,2022-02-20,Essential Research,Online,NAT,1089,35,38,9,5,6
+2022-02-14,2022-02-23,Roy Morgan,Online/Phone,NAT,2261,32.5,37.5,12.5,3.5,0
+2022-02-23,2022-02-26,Newspoll,Online,NAT,1525,35,41,9,3,0
+2022-02-24,2022-03-06,Roy Morgan,Online/Phone,NAT,1923,34,37.5,11.5,3.5,0
+2022-03-03,2022-03-06,Essential Research,Online,NAT,1089,36,35,10,3,7
+2022-03-09,2022-03-12,Newspoll,Online,NAT,1520,35,41,8,3,0
+2022-03-14,2022-03-20,Roy Morgan,Online/Phone,NAT,1418,31,37.5,12,3,0
+2022-03-17,2022-03-20,Essential Research,Online,NAT,1091,37,37,9,3,7
+2022-03-21,2022-03-27,Roy Morgan,Online/Phone,NAT,1404,33,35.5,12.5,3.5,0
+2022-03-28,2022-04-03,Roy Morgan,Online/Phone,NAT,1367,33,39.5,11,3.5,0
+2022-03-30,2022-04-03,Ipsos,Online/Phone,NAT,2563,31,35,10,4,7
+2022-03-30,2022-04-03,Resolve Strategic,Online,NAT,1618,34,38,11,2,0
+2022-03-31,2022-04-03,Newspoll,Online,NAT,1531,36,38,10,3,0
+2022-03-30,2022-04-05,Essential Research,Online,NAT,984,37,36,10,4,5
+2022-04-04,2022-04-10,Roy Morgan,Online/Phone,NAT,1384,32.5,36,12.5,5,0
+2022-04-06,2022-04-09,Newspoll,Online,NAT,1506,36,37,10,3,0

@@ -1,74 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>House</title>
-
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="my_css/bubble.css">
-    <link rel="stylesheet" href="my_css/frame.css">
-    <link rel="stylesheet" href="my_css/beegraph.css">
-
+    <title>Document</title>
+    <style>
+        .tick{
+            font-size: 14px;
+        }
+    </style>
 </head>
-
-<body style="background-color: lightgray;">
-
-
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark ">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="img/logo.svg" alt="" width="140" height="24"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
-                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarScroll">
-                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html"
-                            style="text-decoration: underline;"> House</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="senate.html">Senate</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            About
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                            <li><a class="dropdown-item" href="#">Modelling</a></li>
-                            <li><a class="dropdown-item" href="#">Author</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Github</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Contribute</a>
-                    </li>
-                </ul>
-                <span class="navbar-text">
-                    An Australian Election Forecaster
-                </span>
-            </div>
-        </div>
-    </nav>
-    <div id="example-table"></div>
-
-    <script src="js/bootstrap.js"></script>
-
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script
-        src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link href="https://unpkg.com/tabulator-tables@5.1.8/dist/css/tabulator.min.css" rel="stylesheet">
-    <script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.1.8/dist/js/tabulator.min.js"></script>
-
-</body>
-
+<body>
+    <!-- Load d3.js -->
+    <button onclick="update('page_data/testing.csv')">Dataset 1</button>
+    <button onclick="update('page_data/testing2.csv')">Dataset 2</button>
+    <!-- Create a div where the graph will take place -->
+    <div id="my_dataviz"></div>
+    <script src="https://d3js.org/d3.v6.js"></script>
+    <script src="my_js/testing.js"></script>
+</script></body>
 </html>

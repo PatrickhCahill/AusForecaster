@@ -69,6 +69,7 @@ Grey,0.367,0.489,0.5301,SA,Regional,Yes
 Griffith,0.529,0.515,0.3353,QLD,City,Yes
 Groom,0.295,0.347,0.4513,QLD,Regional,Yes
 Hasluck,0.446,0.479,0.4383,WA,Regional,Yes
+Hawke,0.602,0.6137,0.5824,VIC,Suburban,Yes
 Herbert,0.416,0.5,0.4007,QLD,Regional,Yes
 Higgins,0.461,0.4,0.4811,VIC,City,Yes
 Hindmarsh,0.565,0.584,0.4096,SA,City,Yes
@@ -136,7 +137,6 @@ Scullin,0.717,0.696,0.6435,VIC,Suburban,Yes
 Shortland,0.544,0.599,0.5721,NSW,Regional,Yes
 Solomon,0.531,0.581,0.486,NT,City,Yes
 Spence,0.641,0.691,0.397,SA,Suburban,Yes
-Stirling,0.444,0.439,0.3992,WA,City,Yes
 Sturt,0.431,0.446,0.4347,SA,City,Yes
 Swan,0.473,0.464,0.6465,WA,City,Yes
 Sydney,0.687,0.653,0.3533,NSW,City,Yes
