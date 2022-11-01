@@ -47,14 +47,24 @@ function update(file) {
             //Group data according to label. In the case by political party
             const sumstat = d3.group(data, d => d.party);
             //Create x-axis. Change the domain arguments to change the x-axis
-            x.domain(d3.extent(data, function (d) { return d.date; }))
+            startDate = d3.extent(data, function (d) { return d.date; })[0]
+            console.log()
+            x.domain([startDate,d3.timeParse("%Y-%m-%d")("2022-05-21")])
 
             timechart.selectAll(".myXaxis").transition()
                 .duration(3000)
                 .call(xAxis);
 
             //Create the y-axis. Change the domain arguments to change the y-axis
-            y.domain([0, 100])
+            const ymin = 0;
+            let ymax;
+            if (d3.extent(data, function (d) { return d.tpp; })[1]<=1) {
+                ymax = 1
+            } else {
+                ymax = 100
+            }
+            
+            y.domain([ymin,ymax])
             timechart.selectAll(".myYaxis")
                 .transition()
                 .duration(3000)
@@ -103,7 +113,7 @@ function update(file) {
                 .attr("d", function (d) {
                     return d3.line()
                         .x(function (d) { return x(d.date); })
-                        .y(function (d) { return y(+d.tpp); })
+                        .y(function (d) {console.log(d) ;return y(+d.tpp); })
                         (d[1])
                 });
 
@@ -128,13 +138,12 @@ function update(file) {
                     .attr("alignment-baseline", "middle"))
             };
             const initialX = d3.extent(data, function (d) { return d.date; })[1];
-            const maxY = 80;
-            const LineTextOffset = 2;
+            const LineTextOffset = 1.1;
             const tooltipLine = timechart.append("line")
                 .attr("x1", x(initialX))
                 .attr("y1", y(0))
                 .attr("x2", x(initialX))
-                .attr("y2", y(maxY))
+                .attr("y2", y(ymax))
                 .style("stroke-width", 1)
                 .style("stroke-dasharray", ("2, 3"))
                 .style("stroke", "black")
@@ -144,8 +153,8 @@ function update(file) {
                 .style("opacity", 0)
                 .attr("text-anchor", "middle")
                 .attr("alignment-baseline", "middle")
-                .attr("y", y(maxY + LineTextOffset))
-            // Create the text that travels along the curve of chart
+                .attr("y", y(ymax));
+
 
 
 
@@ -195,6 +204,16 @@ function update(file) {
                 tooltipLineText
                     .html("Date: " + formatDate(selectedData[0].date))
                     .attr("x", x(selectedData[0].date));
+
+                if (nearestDateTime <= d3.timeParse("%Y-%m-%d")("2020-04-01").getTime()) {
+                    tooltipLineText.attr("text-anchor", "right")
+                } else if (nearestDateTime >= d3.timeParse("%Y-%m-%d")("2022-01-01").getTime()) {
+                    tooltipLineText.attr("text-anchor", "end")
+                } 
+                else {
+                    tooltipLineText.attr("text-anchor", "middle")
+                }
+
             };
             function mouseout() {
                 for (let index = 0; index < focus.length; index++) {
@@ -208,4 +227,4 @@ function update(file) {
 
         });
 };
-update('page_data/testing.csv');
+update('page_data/testing4.csv');

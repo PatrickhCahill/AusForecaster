@@ -31,7 +31,13 @@ def makeprimaries(avgprimaries,stds):
     for statenum, state in enumerate(avgprimaries):
         stateprimaries = []
         for index,val in enumerate(state):
-            stateprimaries.append(max(np.random.normal(val,stds[statenum][index]),0.01))
+            if index <2:
+                stateprimaries.append(min(max(np.random.normal(val,stds[statenum][index]),0.3),0.5))
+            elif index==2:
+                stateprimaries.append(min(max(np.random.normal(val,stds[statenum][index]),0.05),0.2))
+            else:
+                stateprimaries.append(min(max(np.random.normal(val,stds[statenum][index]),0.01),0.2))
+
         outswings.append(normalise(np.array(stateprimaries)))
     return np.array(outswings)
 
@@ -270,29 +276,48 @@ def getfacts(df,num):
 def handledata(theDate,df,num):
     dir_path = os.path.dirname(os.path.realpath(__file__)).removesuffix("\code")
     #Probdata
-    tppavg = 0
-    nlab = 0
-    nlib = 0
-    nind = 0
-    plab = 0
-    plib = 0
-    phung= 0
+    labseats = []
+    libseats = []
+    indseats = []
+    labwins = []
+    libwins = []
+    hungwins = []
+    tpps = []
     for index in range(0,num):
         testlist = df.loc[index]
-        labseats= sum([d.winner=="Labor" for d in testlist])
-        libseats= sum([d.winner=="Coalition" for d in testlist])
-        indseats= sum([d.winner=="Independent" for d in testlist])
-        tppavg += sum([d.outcome for d in testlist])/151/num
-        nlab   +=labseats/num
-        nlib   +=libseats/num
-        nind   +=indseats/num
-        if labseats>=76:
-            plab += 1/num
-        elif libseats>=76:
-            plib += 1/num
+        labseats.append(sum([d.winner=="Labor" for d in testlist]))
+        libseats.append(sum([d.winner=="Coalition" for d in testlist]))
+        indseats.append(sum([d.winner=="Independent" for d in testlist]))
+        tpps.append(sum([d.outcome for d in testlist])/151)
+
+        if labseats[-1]>=76:
+            labwins.append(1)
+            libwins.append(0)
+            hungwins.append(0)
+        elif libseats[-1]>=76:
+            labwins.append(0)
+            libwins.append(1)
+            hungwins.append(0)
         else:
-            phung+= 1/num
+            labwins.append(0)
+            libwins.append(0)
+            hungwins.append(1)
     
+    nlab =np.mean(labseats)
+    nlib =np.mean(libseats)
+    nind =np.mean(indseats)
+    nlabErorr = 1.96*np.std(labseats)
+    nlibErorr = 1.96*np.std(libseats)
+    nindErorr = 1.96*np.std(indseats)
+    plab =np.mean(labwins)
+    plib =np.mean(libwins)
+    phung =np.mean(hungwins)
+    # plabErorr = 1.96*np.std(labwins)/num
+    # plibErorr = 1.96*np.std(libwins)/num
+    # phungErorr = 1.96*np.std(hungwins)/num
+    tppavg = np.mean(tpps)
+    tppError = np.std(tpps)
+
     probstringlabor = dt.date.isoformat(theDate)+","+"Labor"+","+str(round(plab,2))+",0"
     probstringlib = dt.date.isoformat(theDate)+","+"Coalition"+","+str(round(plib,2))+",0"
     probstringhung = dt.date.isoformat(theDate)+","+"Others"+","+str(round(phung,2))+",0"
@@ -302,9 +327,9 @@ def handledata(theDate,df,num):
         f.write("\n"+probstringlib)
         f.write("\n"+probstringhung)
     #SeatData
-    seatstringlabor = dt.date.isoformat(theDate)+","+"Labor"+","+str(round(nlab,1))+",0"
-    seatstringlib = dt.date.isoformat(theDate)+","+"Coalition"+","+str(round(nlib,1))+",0"
-    seatstringothers = dt.date.isoformat(theDate)+","+"Others"+","+str(round(nind,1))+",0"
+    seatstringlabor = dt.date.isoformat(theDate)+","+"Labor"+","+str(round(nlab,1))+","+str(round(nlabErorr,1))
+    seatstringlib = dt.date.isoformat(theDate)+","+"Coalition"+","+str(round(nlib,1))+","+str(round(nlibErorr,1))
+    seatstringothers = dt.date.isoformat(theDate)+","+"Others"+","+str(round(nind,1))+","+str(round(nindErorr,1))
 
     with open(dir_path + "/docs/page_data/testing2.csv",'a') as f:
         f.write("\n"+seatstringlabor)
@@ -312,8 +337,8 @@ def handledata(theDate,df,num):
         f.write("\n"+seatstringothers)
 
     #TppData
-    tppstringlabor = dt.date.isoformat(theDate)+","+"Labor"+","+str(round(tppavg,3))+",0"
-    tppstringlib = dt.date.isoformat(theDate)+","+"Coalition"+","+str(round(1-tppavg,3))+",0"
+    tppstringlabor = dt.date.isoformat(theDate)+","+"Labor"+","+str(round(tppavg,3))+","+str(tppError)
+    tppstringlib = dt.date.isoformat(theDate)+","+"Coalition"+","+str(round(1-tppavg,3))+","+str(tppError)
 
     with open(dir_path + "/docs/page_data/testing3.csv",'a') as f:
         f.write("\n"+tppstringlabor)
@@ -325,22 +350,21 @@ def backrun():
     delta = dt.timedelta(days=7)
     while rundate <= dt.date.today():
         print(dt.date.isoformat(rundate))
-        num = 1000
+        num = 10000
         data = main(num,rundate)
         names = [aSeat.name for aSeat in data[0]]
         df = pd.DataFrame(data, columns=names)
-        handledata(dt.date.today(),df,num)
+        handledata(rundate,df,num)
         rundate += delta
 
 
 if __name__ == '__main__':
-    backrun()
-
-
-
-
-
-
+    dir_path = os.path.dirname(os.path.realpath(__file__)).removesuffix("\code")
+    df = pd.read_csv(dir_path + "/docs/page_data/testing3.csv")
+    for index in range(6,len(df)):
+        df.at[index,'tpp'] = round((1/3)*(df.loc[index-6].tpp+df.loc[index-3].tpp+df.loc[index].tpp),3)
+    
+    df.to_csv(dir_path + "/docs/page_data/testing6.csv")
 
     # with cProfile.Profile() as pr:
     #         data = main(100)

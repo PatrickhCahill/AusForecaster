@@ -151,11 +151,12 @@ def getY(theDate,Ys,X,results2019):
         avgdPoll = poll(theDate,theDate,"Accumulated","n/a","NAT",size,liberal,labor,greens,onp,ind,und,False)
         return avgdPoll
 
-def getU(X,naturalmeans,config):
+def getU(X,config):
     '''This function is where the'''
 
     currentPreds = list(X.T[0])
     revert_to_mean = []
+    naturalmeans = config["naturalmeans"]
     for i,val in enumerate(naturalmeans):
         revert_to_mean.append(naturalmeans[i]-currentPreds[i])
     U = array([[0] for i in naturalmeans]+[[ val*config["mean_reversion_strength"]] for val in revert_to_mean])
@@ -194,7 +195,7 @@ def applyfilter(startDate,endDate,results2019,Ys,config):
     Ps = [P]
     for i in arange(0, N_iter):
         theDate += dt.timedelta(days=config["step"])
-        U = getU(X,results2019,config)
+        U = getU(X,config)
         (X, P) = kf_predict(X, P, A, Q, B, U)
         Y = getY(theDate,Ys,X,results2019)
         if Y != False: # If there is a poll on this day. Then we perform kf_update()
@@ -216,10 +217,15 @@ def applyfilter(startDate,endDate,results2019,Ys,config):
     for index in range(1,len(Xs)):
         try:
             C = dot(Ps[index],dot(A.T,inv(Ps[index-1])))
+            Ss[index] += dot(C,(Ss[index-1]-Xs[index-1]))
+
         except:
-            # print(Ps[index-1])
-            pass
-        Ss[index] += dot(C,(Ss[index-1]-Xs[index-1]))
+            try: 
+                print("Error finding C, using previous C as C: "+dt.date.isoformat(theDate))
+                Ss[index] += dot(C,(Ss[index-1]-Xs[index-1]))
+            except:
+                print("Error finding C, using Xs[index] as Ss[index] at date: "+dt.date.isoformat(theDate))
+                Ss[index] = Xs[index]
     Ss.reverse()
     return dates,Ss,Ps
 
@@ -258,7 +264,7 @@ def smoothlist(primarylist):
     return smoothprimarieslist
 
 def aggregatepolls(startDate,endDate,results2019,Ys,config):
-    dates,Ss, Ps = applyfilter(startDate,endDate+dt.timedelta(days=31),results2019,Ys,config)
+    dates,Ss, Ps = applyfilter(startDate,dt.date.fromisoformat("2022-05-21")+dt.timedelta(days=100),results2019,Ys,config)
     primaryvotes = getprimaryvote(Ss,results2019)
     primaryerrors = geterrors(Ps,results2019)
 
@@ -370,9 +376,10 @@ results2016 = [0.4204,0.3437,0.123,0.033,0.078] #Results of the 2016 election
 config ={
     "file":"polling_data/2022natpolls.csv",
     "step":1, #1 day,
-    "PNoPollStrength":0.000,
-    "XNoPollStrength":0.005  ,
-    "systemuncertainty":0.05,   
+    "PNoPollStrength":0.005,
+    "XNoPollStrength":0.005,
+    "systemuncertainty":0.05,
+    "naturalmeans":[0.37,0.35,0.10,0.03,0.12],
     "mean_reversion_strength":0.1,
     "polluncertaintyamplifier":1,
     "deltas":{
@@ -391,18 +398,18 @@ deltas =  {"Essential" :{"strength":config["deltas"]["essentialStrength"], "corr
 # Ys = csvtopollss("2019datapolls.csv",deltas)
 # dates,primaryvotes, primaryerrors = aggregatepolls(dt.date.fromisoformat("2016-07-02"),dt.date.fromisoformat("2019-05-18"),results2016,Ys,config)
 
-# Ys = csvtopollss("2022natpolls.csv",deltas)
-# dates,primaryvotes, primaryerrors = aggregatepolls(dt.date.fromisoformat("2019-05-18"),dt.date.today(),results2019,Ys,config)
+Ys = csvtopollss("polling_data/2022natpolls.csv",deltas)
+dates,primaryvotes, primaryerrors = aggregatepolls(dt.date.fromisoformat("2019-05-18"),dt.date.today(),results2019,Ys,config)
 
 # # print(list(array(primaryvotes).T[-1]))
 
 
-# plotparty(dates,primaryvotes, primaryerrors,0,Ys)
-# plotparty(dates,primaryvotes, primaryerrors,1,Ys)
-# plotparty(dates,primaryvotes, primaryerrors,2,Ys)
-# plotparty(dates,primaryvotes, primaryerrors,3,Ys)
-# plotparty(dates,primaryvotes, primaryerrors,4,Ys)
-# plt.show()
+plotparty(dates,primaryvotes, primaryerrors,0,Ys)
+plotparty(dates,primaryvotes, primaryerrors,1,Ys)
+plotparty(dates,primaryvotes, primaryerrors,2,Ys)
+plotparty(dates,primaryvotes, primaryerrors,3,Ys)
+plotparty(dates,primaryvotes, primaryerrors,4,Ys)
+plt.show()
 
 
 
